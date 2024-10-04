@@ -9,14 +9,20 @@ namespace UnsubscribeService.Middlewares
 {
     public class RateLimitingMiddleware
     {
+        #region << Fields >>
+
         private readonly RequestDelegate _next;
         private readonly ILogger<RateLimitingMiddleware> _logger;
 
+        #endregion
+
+        #region << Constructor >>
         public RateLimitingMiddleware(RequestDelegate next, ILogger<RateLimitingMiddleware> logger)
         {
             _next = next;
             _logger = logger;
         }
+        #endregion
 
         #region << Public methods >>
         public async Task InvokeAsync(HttpContext context)

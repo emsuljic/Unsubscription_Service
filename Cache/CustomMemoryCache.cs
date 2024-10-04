@@ -5,16 +5,22 @@ namespace UnsubscribeService.Cache
 {
     public class CustomMemoryCache : ICustomMemoryCache
     {
+        #region << Fields >>
 
         private readonly IMemoryCache _memoryCache;
         private readonly ILogger<CustomMemoryCache> _logger;
 
+        #endregion
+
+        #region << Constructor >>
         public CustomMemoryCache(IMemoryCache memoryCache, ILogger<CustomMemoryCache> logger)
         {
             _memoryCache = memoryCache;
             _logger = logger;
         }
+        #endregion
 
+        #region << Public methods >>
         public void Set<T>(string key, T value, TimeSpan duration)
         {
             _logger.LogInformation($"Setting cache for key: {key}");
@@ -43,5 +49,6 @@ namespace UnsubscribeService.Cache
             _logger.LogInformation($"Removing cache for key: {key}");
             _memoryCache.Remove(key);
         }
+        #endregion
     }
 }

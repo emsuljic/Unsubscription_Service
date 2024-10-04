@@ -21,7 +21,7 @@ namespace UnsubscribeService.ServiceAttributes
 
         #endregion
 
-        #region << Methods >>
+        #region << Public methods >>
 
         public override void OnActionExecuting(ActionExecutingContext actionContext)
         {
