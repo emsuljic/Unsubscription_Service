@@ -1,0 +1,13 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Other common files to ignore
+*.db
+*.log
