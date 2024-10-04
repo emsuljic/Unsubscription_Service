@@ -106,9 +106,6 @@ builder.Services.AddRateLimiter(options =>
     });
 });
 
-
-
-
 #endregion
 
 
@@ -118,6 +115,7 @@ var configuration = builder.Configuration;
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseMiddleware<RateLimitingMiddleware>();
+app.UseRateLimiter();
 
 
 if (app.Environment.IsDevelopment())
